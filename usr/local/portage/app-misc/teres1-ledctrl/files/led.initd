@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="Deamon for controlling Teres' caps lock and num lock leds"
+
+DEVICE=${DEVICE:-/dev/input/event4}
+
+command="/usr/bin/teres1-ledctrl"
+command_args="${DEVICE}"
+pidfile="/run/teres1-ledctrl.pid"
+start_stop_daemon_args="--background --make-pidfile
+    --stdout /dev/null --stderr /dev/null"

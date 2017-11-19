@@ -1,0 +1,2 @@
+# we only have 3.10.headers, but 3.17 is needed for libbsd, and 3.16 for iproute2
+sys-kernel/linux-headers-3.17

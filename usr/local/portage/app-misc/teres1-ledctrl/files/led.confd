@@ -1,0 +1,2 @@
+# device to control by default /dev/input/event4
+#DEVICE=/dev/input/event4

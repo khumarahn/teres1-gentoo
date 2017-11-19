@@ -1,0 +1,40 @@
+# networkmanager and nm-applet
+net-misc/networkmanager gnutls -nss
+app-crypt/gcr gtk
+app-crypt/pinentry gnome-keyring
+
+# misc
+sys-apps/busybox mdev
+x11-libs/libxcb xkb
+dev-libs/libpcre2 pcre16
+app-text/xmlto text
+sys-devel/distcc gtk crossdev
+
+# chromium
+sys-libs/zlib minizip
+media-video/ffmpeg chromium # not sure what this is
+
+# lxde
+x11-libs/libfm gtk udisks exif
+gnome-base/gvfs udisks
+lxde-base/lxsession upower
+>=lxde-base/lxterminal-0.3.0 gtk3
+
+app-text/texlive xetex
+app-text/texlive-core xetex
+
+# gummi
+app-text/poppler cairo
+
+app-editors/gvim gtk3
+
+x11-misc/redshift geoclue gtk
+
+# gimp
+media-libs/gegl cairo
+media-libs/libmypaint gegl
+
+# libreoffice
+dev-libs/xmlsec nss -gnutls
+
+net-p2p/transmission lightweight gtk

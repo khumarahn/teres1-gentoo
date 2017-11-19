@@ -1,0 +1,2 @@
+event=button/suspend.*
+action=/etc/acpi/actions/suspend.sh %e
