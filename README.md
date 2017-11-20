@@ -15,13 +15,13 @@ With distcc, it takes around three days to compile everything.
 
 ## Download
 
-Download the image here: ![Torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171119.img.xz.torrent).
+Download the image here: ![Torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171120.img.xz.torrent).
 
 Unpack it and burn to a microsd card:
 ```
 dd if=teres-gentoo-20171119.img of=/dev/sdx status=progress
 ```
-Plug the card in and boot. 
+Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
 
 If you feel there is not much free space, try using a larger sd card and resizing the system partition and/or remove texlive.
 
