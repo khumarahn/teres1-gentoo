@@ -30,7 +30,7 @@ To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcbl
 ## Notes:
 * For the sleep button to work (Fn+F1), update the keyboard firmware, see https://github.com/d3v1c3nv11/TERES-KBD-RELEASE/tree/master/upgrade
 * ACPI sleep, power button and brightness up/down events are controlled by acpid, they work regardless of the desktop environment, also without it in console. To change the behaviour, consult the very simple scripts in /etc/acpi/actions.
-* Screenshots are handled by a script /usr/local/bin/screenshot.sh. It silently saves png to ~/screenshots.
+* Screenshots are handled by a script /usr/local/bin/screenshot.sh. It silently saves png to ~/screenshots. PrtScr saves the sholw screen, and Ctrl+PrtScr or Shift+PrtScr let you select a window.
 * No systemd, because it complains about the old kernel. Using openrc instead.
 * Battery indication is tricky, I had to patch lxpanel specifically for Teres. Currently it shows the charge (percentage) accurately, but does not estimate the remaining time.
 * Linux kernel is stock, except I changed the governor to "ondemand" and disabled `CONFIG_SECCOMP` (for chromium and pulseaudio).
