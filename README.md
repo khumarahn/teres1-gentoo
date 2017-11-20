@@ -24,7 +24,7 @@ $ sha256sum teres-gentoo-20171120.img*
 
 Unpack it and burn to a microsd card:
 ```
-dd if=teres-gentoo-20171119.img of=/dev/sdx status=progress
+dd if=teres-gentoo-20171120.img of=/dev/sdx status=progress
 ```
 Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
 
