@@ -2,11 +2,11 @@
 
 DIY laptop is amazing!
 
-Building a usable linux on Teres 1 needs some patching, custom scripts and ebuilds. This repo hosts configuration files and local overlay for a Gentoo build with LXDE, Chromium, LaTeX, Gimp, LibreOffice, Vim, Java, etc. This is a lightweight but functional desktop.
+Building a usable linux on Teres 1 needs some patching and custom scripts. This repo hosts configuration files and local overlay for a Gentoo build with LXDE, Chromium, LaTeX, Gimp, LibreOffice, Vim, Java, etc. This is a lightweight but functional desktop.
 
 ![This must stop!](https://raw.githubusercontent.com/khumarahn/teres1-gentoo/master/screen.1.png)
 
-C and C++ programs are compiled for Cortex-a53 with
+C and C++ programs are compiled for Cortex-a53 by gcc-6.4.0 with
 ```
 CFLAGS="-O2 -pipe -march=armv8-a+crypto+crc -mtune=cortex-a53"
 CXXFLAGS="${CFLAGS}"
@@ -15,7 +15,12 @@ With distcc, it takes around three days to compile everything.
 
 ## Download
 
-Download the image here: ![Torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171120.img.xz.torrent).
+Download the image here: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171120.img.xz.torrent).
+```
+$ sha256sum teres-gentoo-20171120.img*
+15a094510d200c948de9cd7a29060bb481d3bb37b348014c3ad1b184a53d1ad7  teres-gentoo-20171120.img
+81f99641919a3ceef3c75a5adc6d355804009340aef77fc26ee671abcd8cd7e7  teres-gentoo-20171120.img.xz
+```
 
 Unpack it and burn to a microsd card:
 ```
@@ -30,8 +35,8 @@ To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcbl
 ## Notes:
 * For the sleep button to work (Fn+F1), update the keyboard firmware, see https://github.com/d3v1c3nv11/TERES-KBD-RELEASE/tree/master/upgrade
 * ACPI sleep, power button and brightness up/down events are controlled by acpid, they work regardless of the desktop environment, also without it in console. To change the behaviour, consult the very simple scripts in /etc/acpi/actions.
-* Screenshots are handled by a script /usr/local/bin/screenshot.sh. It silently saves png to ~/screenshots. PrtScr saves the sholw screen, and Ctrl+PrtScr or Shift+PrtScr let you select a window.
+* Screenshots are handled by the script `/usr/local/bin/screenshot.sh`. It silently saves png to `~/screenshots/`. PrtScr saves the whole screen, and Ctrl+PrtScr or Shift+PrtScr let you select a window.
 * No systemd, because it complains about the old kernel. Using openrc instead.
 * Battery indication is tricky, I had to patch lxpanel specifically for Teres. Currently it shows the charge (percentage) accurately, but does not estimate the remaining time.
-* Linux kernel is stock, except I changed the governor to "ondemand" and disabled `CONFIG_SECCOMP` (for chromium and pulseaudio).
+* Linux kernel is stock, except I changed the governor to `ondemand` and disabled `CONFIG_SECCOMP` (for chromium and pulseaudio).
 * Hdmi is not tested, I do not have the cable or the monitor.
