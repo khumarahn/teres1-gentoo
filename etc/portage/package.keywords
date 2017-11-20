@@ -35,3 +35,6 @@ net-misc/nextcloud-client ~amd64
 dev-libs/qtkeychain amd64
 sys-fs/inotify-tools amd64
 
+sys-block/f3 amd64
+
+sci-calculators/speedcrunch amd64 ~amd64

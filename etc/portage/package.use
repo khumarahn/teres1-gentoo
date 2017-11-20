@@ -38,3 +38,5 @@ media-libs/libmypaint gegl
 dev-libs/xmlsec nss -gnutls
 
 net-p2p/transmission lightweight gtk
+
+sys-block/f3 extra

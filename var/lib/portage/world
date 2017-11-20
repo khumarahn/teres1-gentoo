@@ -36,7 +36,10 @@ net-misc/openntpd
 net-misc/youtube-dl
 net-p2p/transmission
 net-wireless/iw
+sci-calculators/speedcrunch
+sys-apps/gnome-disk-utility
 sys-apps/usbutils
+sys-block/f3
 sys-devel/bc
 sys-devel/distcc
 sys-fs/dosfstools
