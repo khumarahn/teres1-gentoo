@@ -7,6 +7,3 @@ suspend_lock=/run/lock/teres-suspend
 touch "${suspend_lock}"
 
 echo -n mem > /sys/power/state
-
-# debug
-sleep 2; /etc/init.d/teres1-ledctrl restart

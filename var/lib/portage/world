@@ -38,6 +38,7 @@ net-p2p/transmission
 net-wireless/iw
 sci-calculators/speedcrunch
 sys-apps/gnome-disk-utility
+sys-apps/haveged
 sys-apps/usbutils
 sys-block/f3
 sys-devel/bc

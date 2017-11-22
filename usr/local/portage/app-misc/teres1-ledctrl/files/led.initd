@@ -4,7 +4,7 @@
 
 description="Deamon for controlling Teres' caps lock and num lock leds"
 
-DEVICE=${DEVICE:-/dev/input/event4}
+DEVICE=${DEVICE:-"/dev/input/by-path/platform-1c1b000.ehci1-controller-usb-0:1.4:1.0-event-kbd"}
 
 command="/usr/bin/teres1-ledctrl"
 command_args="${DEVICE}"

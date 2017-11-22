@@ -1,2 +1,3 @@
-# device to control by default /dev/input/event4
-#DEVICE=/dev/input/event4
+# device to control, default:
+# "/dev/input/by-path/platform-1c1b000.ehci1-controller-usb-0:1.4:1.0-event-kbd"
+#DEVICE=

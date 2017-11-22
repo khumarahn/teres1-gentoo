@@ -29,6 +29,3 @@ case "${action}" in
         logger -t "acpi_lid:" "unknown option ${action}"
         ;;
 esac
-
-# debug
-sleep 2; /etc/init.d/teres1-ledctrl restart

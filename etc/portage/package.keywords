@@ -38,3 +38,5 @@ sys-fs/inotify-tools amd64
 sys-block/f3 amd64
 
 sci-calculators/speedcrunch amd64 ~amd64
+
+<sys-apps/haveged-9999 **
