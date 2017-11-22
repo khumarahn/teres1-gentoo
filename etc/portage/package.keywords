@@ -40,3 +40,6 @@ sys-block/f3 amd64
 sci-calculators/speedcrunch amd64 ~amd64
 
 <sys-apps/haveged-9999 **
+
+# for biblatex
+dev-perl/XML-Writer amd64 ~amd64

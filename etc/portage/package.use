@@ -20,7 +20,7 @@ gnome-base/gvfs udisks
 lxde-base/lxsession upower
 >=lxde-base/lxterminal-0.3.0 gtk3
 
-app-text/texlive xetex
+app-text/texlive xetex extra
 app-text/texlive-core xetex
 
 # gummi
