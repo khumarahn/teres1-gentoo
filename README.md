@@ -21,16 +21,16 @@ The kernel is special, and you may need to replace linux-headers with Teres' hea
 
 ## Download
 
-As a preview, you can download an image here: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171120.img.xz.torrent). I made it for myself for everyday use.
+As a preview, you can download an image here: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171123.img.xz.torrent). I made it for myself for everyday use.
 ```
-$ sha256sum teres-gentoo-20171120.img*
-15a094510d200c948de9cd7a29060bb481d3bb37b348014c3ad1b184a53d1ad7  teres-gentoo-20171120.img
-81f99641919a3ceef3c75a5adc6d355804009340aef77fc26ee671abcd8cd7e7  teres-gentoo-20171120.img.xz
+$ sha256sum teres-gentoo-20171123.img*
+e5fe184b121941b36f0623566c5dc1de91a9f221cf9fc67fda00283c5a601a05  teres-gentoo-20171123.img
+c648c60b32977a825f38459508c9ec1ca5a1e93348779f15d97c78e1df12f90e  teres-gentoo-20171123.img.xz
 ```
 
 Unpack it and burn to a microsd card:
 ```
-dd if=teres-gentoo-20171120.img of=/dev/sdx status=progress
+dd if=teres-gentoo-20171123.img of=/dev/sdX status=progress
 ```
 Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
 
@@ -38,15 +38,9 @@ If you feel there is not much free space, try using a larger sd card and resizin
 
 To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcblk0p2` with what is in the respective partitions in the image. Then edit `/etc/fstab` and `/boot/uEnv.txt`.
 
-### Suspend audio fix
-
-In the downloadable image, I forgot to save/restore alsa state on suspend. If you want it fixed, change two files: `/etc/acpi/actions/suspend.sh` and `/etc/acpi/actions/powerbtn.sh`. They should be as here:
-[/etc/acpi/actions/](https://github.com/khumarahn/teres1-gentoo/blob/master/etc/acpi/actions/).
-Related commit: [89417d6](https://github.com/khumarahn/teres1-gentoo/commit/89417d6514e38ce4384b6242f0967664c1df6122)
-
 ## Notes:
 * For the sleep button to work (Fn+F1), update the keyboard firmware, see https://github.com/d3v1c3nv11/TERES-KBD-RELEASE/tree/master/upgrade
-* ACPI sleep, power button and brightness up/down events are controlled by acpid, they work regardless of the desktop environment, also without it in console. To change the behaviour, consult the very simple scripts in /etc/acpi/actions.
+* ACPI sleep, power button and brightness up/down events are controlled by acpid, they work regardless of the desktop environment, also without it in console. To change the behaviour, see the very simple scripts in /etc/acpi/actions.
 * Screenshots are handled by the script `/usr/local/bin/screenshot.sh`. It silently saves png to `~/screenshots/`. PrtScr saves the whole screen, and Ctrl+PrtScr or Shift+PrtScr let you select a window.
 * No systemd, because it complains about the old kernel. Using openrc instead.
 * Battery indication is tricky, I had to patch lxpanel specifically for Teres. Currently it shows the charge (percentage) accurately, but does not estimate the remaining time.
