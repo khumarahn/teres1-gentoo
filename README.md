@@ -13,9 +13,15 @@ CXXFLAGS="${CFLAGS}"
 ```
 With distcc, it takes around three days to compile everything.
 
+## Install
+
+I feel that a proper manual is due. Maybe, an article on Gentoo's wiki. But if you ever installed Gentoo and you are adventurous enough to want Gentoo on Teres, you probably know what to do.
+
+The kernel is special, and you may need to replace linux-headers with Teres' headers from the beginning. See my [package.provided](https://github.com/khumarahn/teres1-gentoo/blob/master/etc/portage/profile/package.provided) and [teres-headers](https://github.com/khumarahn/teres1-gentoo/tree/master/usr/local/portage/sys-kernel/teres-headers).
+
 ## Download
 
-Download the image here: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171120.img.xz.torrent).
+As a preview, you can download an image here: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171120.img.xz.torrent). I made it for myself for everyday use.
 ```
 $ sha256sum teres-gentoo-20171120.img*
 15a094510d200c948de9cd7a29060bb481d3bb37b348014c3ad1b184a53d1ad7  teres-gentoo-20171120.img
@@ -32,6 +38,12 @@ If you feel there is not much free space, try using a larger sd card and resizin
 
 To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcblk0p2` with what is in the respective partitions in the image. Then edit `/etc/fstab` and `/boot/uEnv.txt`.
 
+### Suspend audio fix
+
+In the downloadable image, I forgot to save/restore alsa state on suspend. If you want it fixed, change two files: `/etc/acpi/actions/suspend.sh` and `/etc/acpi/actions/powerbtn.sh`. They should be as here:
+[/etc/acpi/actions/](https://github.com/khumarahn/teres1-gentoo/blob/master/etc/acpi/actions/).
+Related commit: [89417d6](https://github.com/khumarahn/teres1-gentoo/commit/89417d6514e38ce4384b6242f0967664c1df6122)
+
 ## Notes:
 * For the sleep button to work (Fn+F1), update the keyboard firmware, see https://github.com/d3v1c3nv11/TERES-KBD-RELEASE/tree/master/upgrade
 * ACPI sleep, power button and brightness up/down events are controlled by acpid, they work regardless of the desktop environment, also without it in console. To change the behaviour, consult the very simple scripts in /etc/acpi/actions.
@@ -40,3 +52,4 @@ To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcbl
 * Battery indication is tricky, I had to patch lxpanel specifically for Teres. Currently it shows the charge (percentage) accurately, but does not estimate the remaining time.
 * Linux kernel is stock, except I changed the governor to `ondemand` and disabled `CONFIG_SECCOMP` (for chromium and pulseaudio).
 * Hdmi is not tested, I do not have the cable or the monitor.
+* Bluetooth is not tested.
