@@ -1,0 +1,3 @@
+# audio device, default:
+# "/dev/input/by-path/platform-sound.6-event"
+#DEVICE=

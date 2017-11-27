@@ -5,9 +5,9 @@ EAPI=6
 
 inherit subversion
 
-DESCRIPTION="Script for controlling caps lock and num lock on teres 1 laptop"
+DESCRIPTION="Script for directing audio output: speakers / headphones"
 HOMEPAGE="https://github.com/OLIMEX/DIY-LAPTOP"
-ESVN_REPO_URI="https://github.com/OLIMEX/DIY-LAPTOP/trunk/SOFTWARE/A64-TERES/teres1-ledctrl"
+ESVN_REPO_URI="https://github.com/khumarahn/DIY-LAPTOP/trunk/SOFTWARE/A64-TERES/teres1-audioselect"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,6 +19,6 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	default
-	newconfd "${FILESDIR}/led.confd" teres1-ledctrl
-	newinitd "${FILESDIR}/led.initd" teres1-ledctrl
+	newconfd "${FILESDIR}/as.confd" teres1-audioselect
+	newinitd "${FILESDIR}/as.initd" teres1-audioselect
 }

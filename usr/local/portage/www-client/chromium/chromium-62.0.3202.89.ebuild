@@ -147,6 +147,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-gcc5-r3.patch"
 	"${FILESDIR}/${PN}-gn-bootstrap-r17.patch"
 	"${FILESDIR}/${PN}-glibc2.26-r1.patch"
+	"${FILESDIR}/crc32.patch"
 )
 
 pre_build_checks() {

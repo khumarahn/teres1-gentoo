@@ -1,12 +1,14 @@
 app-admin/logrotate
 app-admin/sudo
 app-admin/syslog-ng
+app-admin/sysstat
 app-arch/cpio
 app-arch/file-roller
 app-editors/gummi
 app-editors/gvim
 app-editors/nano
 app-editors/vim
+app-misc/teres1-audioselect
 app-misc/teres1-ledctrl
 app-misc/tmux
 app-office/libreoffice
@@ -19,6 +21,7 @@ dev-libs/boost
 dev-libs/libusb-compat
 dev-util/dialog
 dev-vcs/git
+dev-vcs/subversion
 gnome-base/libgnome-keyring
 gnome-extra/nm-applet
 lxde-base/lxde-meta
@@ -37,6 +40,7 @@ net-misc/youtube-dl
 net-p2p/transmission
 net-wireless/iw
 sci-calculators/speedcrunch
+sci-electronics/kicad
 sys-apps/gnome-disk-utility
 sys-apps/haveged
 sys-apps/usbutils

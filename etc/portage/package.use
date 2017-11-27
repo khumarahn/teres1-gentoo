@@ -40,3 +40,9 @@ dev-libs/xmlsec nss -gnutls
 net-p2p/transmission lightweight gtk
 
 sys-block/f3 extra
+
+# kicad
+sci-electronics/kicad examples github
+x11-libs/wxGTK opengl
+dev-libs/boost context
+dev-python/wxpython opengl

@@ -1,0 +1,31 @@
+https://bugs.gentoo.org/show_bug.cgi?id=631452
+https://github.com/google/crc32c/commit/d0f929a5db87cb34d03afb0d8e8bfc95b8f786e3#diff-886bcdea57e134830814003035c255ce
+
+--- a/third_party/crc32c/src/include/crc32c/crc32c.h
++++ b/third_party/crc32c/src/include/crc32c/crc32c.h
+@@ -33,22 +33,18 @@
+                 string.size());
+ }
+ 
+-#if defined(__has_include)
++#if __cplusplus > 201402L
+ #if __has_include(<string_view>)
+-// Visual Studio provides a <string_view> header even in C++11 mode. When
+-// included, the header issues an #error. (C1189)
+-#if !defined(_MSC_VER) || __cplusplus >= 201703L
+ #include <string_view>
+ 
+-// Comptues the CRC32C of the bytes in the string_view.
++// Computes the CRC32C of the bytes in the string_view.
+ inline uint32_t Crc32c(const std::string_view& string_view) {
+   return Crc32c(reinterpret_cast<const uint8_t*>(string_view.data()),
+                 string_view.size());
+ }
+ 
+-#endif  // !defined(_MSC_VER) || __cplusplus >= 201703L
+ #endif  // __has_include(<string_view>)
+-#endif  // defined(__has_include)
++#endif  // __cplusplus > 201402L
+ 
+ }  // namespace crc32c
+ 
