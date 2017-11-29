@@ -17,7 +17,6 @@ app-portage/gentoolkit
 app-portage/repoman
 app-text/evince
 app-text/texlive
-dev-libs/boost
 dev-libs/libusb-compat
 dev-util/dialog
 dev-vcs/git
@@ -25,8 +24,12 @@ dev-vcs/subversion
 gnome-base/libgnome-keyring
 gnome-extra/nm-applet
 lxde-base/lxde-meta
+media-fonts/arphicfonts
 media-fonts/dejavu
+media-fonts/droid
+media-fonts/ja-ipafonts
 media-fonts/noto
+media-fonts/wqy-microhei
 media-gfx/gimp
 media-gfx/imagemagick
 media-sound/alsa-utils
