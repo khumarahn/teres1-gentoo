@@ -2,11 +2,11 @@
 
 DIY laptop is amazing!
 
-Building a usable linux on Teres 1 needs some patching and custom scripts. This repo hosts configuration files and local overlay for a Gentoo build with LXDE, Chromium, LaTeX, Gimp, LibreOffice, Vim, Java, etc. This is a lightweight but functional desktop.
+Building a usable linux on Teres 1 needs some patching and custom scripts. This repo hosts configuration files and local overlay for a Gentoo build with LXDE, Chromium, Gimp, LibreOffice, Vim, Java, etc. This is a lightweight but functional desktop.
 
 ![This must stop!](https://raw.githubusercontent.com/khumarahn/teres1-gentoo/master/screen.1.png)
 
-C and C++ programs are compiled for Cortex-a53 by gcc-6.4.0 with
+C and C++ programs are compiled for Cortex-a53 by gcc-7.2.0 with
 ```
 CFLAGS="-O2 -pipe -march=armv8-a+crypto+crc -mtune=cortex-a53"
 CXXFLAGS="${CFLAGS}"
@@ -15,26 +15,26 @@ With distcc, it takes around three days to compile everything.
 
 ## Install
 
-I feel that a proper manual is due. Maybe, an article on Gentoo's wiki. But if you ever installed Gentoo and you are adventurous enough to want Gentoo on Teres, you probably know what to do.
+Gentoo is the most suitable operating system for Teres 1: both do not come ready for use, but require time and patience to assemble. Both give a user comparatively strong control of what's under the hood. So I think that a proper manual is due, maybe an article on Gentoo's wiki.
+
+For now, if you ever installed Gentoo, you probably know where to start. Right, download or build stage 3 and chroot. Or maybe replace the filesystem on the stock Ubuntu image with your stage 3? I hope that this repo will be helpful: you can find here already written ebuilds, or for example the acpi scripts.
 
 The kernel is special, and you may need to replace linux-headers with Teres' headers from the beginning. See my [package.provided](https://github.com/khumarahn/teres1-gentoo/blob/master/etc/portage/profile/package.provided) and [teres-headers](https://github.com/khumarahn/teres1-gentoo/tree/master/usr/local/portage/sys-kernel/teres-headers).
 
 ## Download
 
-As a preview, you can download an image here: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171123.img.xz.torrent). I made it for myself for everyday use.
+Here is the image that I built: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171128.img.xz.torrent). I made it for myself for everyday use.
 ```
-$ sha256sum teres-gentoo-20171123.img*
-e5fe184b121941b36f0623566c5dc1de91a9f221cf9fc67fda00283c5a601a05  teres-gentoo-20171123.img
-c648c60b32977a825f38459508c9ec1ca5a1e93348779f15d97c78e1df12f90e  teres-gentoo-20171123.img.xz
+# sha256sum teres-gentoo-20171128.img*
+f5934c93aa2755c8275123864829fea64c8f5595d9c456a94b2fb79969fc2686  teres-gentoo-20171128.img
+55ec4b024f6484f09caf40af3a16a1a8ddf325e7108736569959c5205e3cb6a5  teres-gentoo-20171128.img.xz
 ```
 
 Unpack it and burn to a microsd card:
 ```
-dd if=teres-gentoo-20171123.img of=/dev/sdX status=progress
+dd if=teres-gentoo-20171128.img of=/dev/sdX status=progress
 ```
 Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
-
-If you feel there is not much free space, try using a larger sd card and resizing the system partition and/or remove texlive.
 
 To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcblk0p2` with what is in the respective partitions in the image. Then edit `/etc/fstab` and `/boot/uEnv.txt`.
 
@@ -47,3 +47,4 @@ To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcbl
 * Linux kernel is stock, except I changed the governor to `ondemand` and disabled `CONFIG_SECCOMP` (for chromium and pulseaudio).
 * Hdmi is not tested, I do not have the cable or the monitor.
 * Bluetooth is not tested.
+* There is a program to control audio output between the headphones and the speakers. It does not work right if the headphones are inserted/removed when the computer is suspended or off.
