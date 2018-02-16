@@ -32,7 +32,7 @@ f5934c93aa2755c8275123864829fea64c8f5595d9c456a94b2fb79969fc2686  teres-gentoo-2
 
 Unpack it and burn to a microsd card:
 ```
-dd if=teres-gentoo-20171123.img of=/dev/sdX status=progress
+dd if=teres-gentoo-20171128.img of=/dev/sdX status=progress
 ```
 Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
 
