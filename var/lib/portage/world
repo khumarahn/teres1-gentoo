@@ -18,6 +18,7 @@ app-portage/repoman
 app-text/evince
 app-text/texlive
 dev-libs/libusb-compat
+dev-tex/biblatex
 dev-util/dialog
 dev-vcs/git
 dev-vcs/subversion
@@ -39,6 +40,7 @@ net-misc/autossh
 net-misc/networkmanager
 net-misc/nextcloud-client
 net-misc/openntpd
+net-misc/tigervnc
 net-misc/youtube-dl
 net-p2p/transmission
 net-wireless/iw
@@ -46,6 +48,7 @@ sci-calculators/speedcrunch
 sci-electronics/kicad
 sys-apps/gnome-disk-utility
 sys-apps/haveged
+sys-apps/pv
 sys-apps/usbutils
 sys-block/f3
 sys-devel/bc

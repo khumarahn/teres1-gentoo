@@ -18,7 +18,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	default
+	dobin teres1-audioselect
 	newconfd "${FILESDIR}/as.confd" teres1-audioselect
 	newinitd "${FILESDIR}/as.initd" teres1-audioselect
 }

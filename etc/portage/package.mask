@@ -1,0 +1,2 @@
+=dev-libs/libxml2-2.9.7* # gentoo bug #644854
+#>=dev-util/cmake-3.10.0  # gentoo bug #644860

@@ -1,1 +1,1 @@
-../../usr/portage/profiles/default/linux/arm64/13.0
+../../usr/portage/profiles/default/linux/arm64/17.0
