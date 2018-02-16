@@ -24,8 +24,8 @@ The kernel is special, and you may need to replace linux-headers with Teres' hea
 ## Download
 
 Here is the image that I built for myself for everyday use:
-* ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171128.img.xz.torrent)
-* ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180215.img.xz.torrent) (Updates: profile 17.0, gcc 7.3, headphones detection fixes, newer versions of many packages.)
+* November 28, 2017: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171128.img.xz.torrent
+* February 15, 2018: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180215.img.xz.torrent (Updates: 17.0 profile, gcc 7.3, headphones detection fixes, newer versions of many packages.)
 ```
 # sha256sum teres-gentoo*.img*
 f5934c93aa2755c8275123864829fea64c8f5595d9c456a94b2fb79969fc2686  teres-gentoo-20171128.img
