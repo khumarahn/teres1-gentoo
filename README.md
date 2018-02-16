@@ -2,11 +2,11 @@
 
 DIY laptop is amazing!
 
-Building a usable linux on Teres 1 needs some patching and custom scripts. This repo hosts configuration files and local overlay for a Gentoo build with LXDE, Chromium, Gimp, LibreOffice, Vim, Java, etc. This is a lightweight but functional desktop.
+Building a usable linux on Teres 1 needs some patching and custom scripts. This repo hosts configuration files and a local overlay for a Gentoo build with LXDE, Chromium, Gimp, LibreOffice, Vim, Java, etc. This is a lightweight but functional desktop.
 
 ![This must stop!](https://raw.githubusercontent.com/khumarahn/teres1-gentoo/master/screen.1.png)
 
-C and C++ programs are compiled for Cortex-a53 by gcc-7.2.0 with
+C and C++ programs are compiled for Cortex-a53 by gcc 7 with
 ```
 CFLAGS="-O2 -pipe -march=armv8-a+crypto+crc -mtune=cortex-a53"
 CXXFLAGS="${CFLAGS}"
@@ -23,16 +23,20 @@ The kernel is special, and you may need to replace linux-headers with Teres' hea
 
 ## Download
 
-Here is the image that I built: ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171128.img.xz.torrent). I made it for myself for everyday use.
+Here is the image that I built for myself for everyday use:
+* ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171128.img.xz.torrent)
+* ![torrent](https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180215.img.xz.torrent) (Updates: profile 17.0, gcc 7.3, headphones detection fixes, newer versions of many packages.)
 ```
-# sha256sum teres-gentoo-20171128.img*
+# sha256sum teres-gentoo*.img*
 f5934c93aa2755c8275123864829fea64c8f5595d9c456a94b2fb79969fc2686  teres-gentoo-20171128.img
 55ec4b024f6484f09caf40af3a16a1a8ddf325e7108736569959c5205e3cb6a5  teres-gentoo-20171128.img.xz
+43e01f7cf7f5c2197ad1b5d9c5516a66465a7214945c712cbd77c89a5c7645f7  teres-gentoo-20180215.img
+c74ae08bae8cb5f61cc4595509e2456504d23eaa5c0ea1be815fa1f329115ca6  teres-gentoo-20180215.img.xz
 ```
 
-Unpack it and burn to a microsd card:
+Unpack the image and burn it to a microsd card:
 ```
-dd if=teres-gentoo-20171128.img of=/dev/sdX status=progress
+dd if=teres-gentoo-20180215.img of=/dev/sdX status=progress
 ```
 Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
 
@@ -47,4 +51,3 @@ To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcbl
 * Linux kernel is stock, except I changed the governor to `ondemand` and disabled `CONFIG_SECCOMP` (for chromium and pulseaudio).
 * Hdmi is not tested, I do not have the cable or the monitor.
 * Bluetooth is not tested.
-* There is a program to control audio output between the headphones and the speakers. It does not work right if the headphones are inserted/removed when the computer is suspended or off.
