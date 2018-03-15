@@ -7,7 +7,6 @@
 media-gfx/gimp                -~arm64 -~arm amd64
 media-sound/pulseaudio        -~arm64 -~arm amd64
 media-sound/pavucontrol       -~arm64 -~arm amd64
-www-client/chromium           -~arm64 -~arm amd64
 
 # bug #646382
 =dev-libs/nss-3.35 -~arm64 -~arm

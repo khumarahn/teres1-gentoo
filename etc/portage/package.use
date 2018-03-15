@@ -46,3 +46,7 @@ sci-electronics/kicad examples github
 x11-libs/wxGTK opengl
 dev-libs/boost context
 dev-python/wxpython opengl
+
+# firefox
+media-libs/libpng apng
+dev-lang/python sqlite

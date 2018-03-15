@@ -1,2 +1,3 @@
 -vdpau
 -dbus
+-gtk

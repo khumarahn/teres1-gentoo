@@ -1,0 +1,14 @@
+diff -u a/mesa.eselect b/mesa.eselect
+--- a/mesa.eselect	2011-04-09 18:59:58.000000000 +0100
++++ b/mesa.eselect	2018-03-12 11:38:56.116686103 +0000
+@@ -9,8 +9,8 @@
+ EBUILD_VERSION="0.0.10"
+ 
+ MESA_CONF_DIR="${EROOT}/usr/share/mesa"
+-MESA_DIR_64="${EROOT}/usr/lib/mesa"
+-DRI_DIR_64="${EROOT}/usr/lib/dri"
++MESA_DIR_64="${EROOT}/usr/lib64/mesa"
++DRI_DIR_64="${EROOT}/usr/lib64/dri"
+ MESA_DIR_32="${EROOT}/usr/lib32/mesa"
+ DRI_DIR_32="${EROOT}/usr/lib32/dri"
+ 

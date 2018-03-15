@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # make a lock file. A power button event wakes us up,
-# then instead of powering off it deleted the lock file
+# then instead of powering off it deletes the lock file
 suspend_lock=/run/lock/teres-suspend
 
 /etc/init.d/alsasound save

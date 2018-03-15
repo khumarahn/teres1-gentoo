@@ -1,0 +1,11 @@
+diff --git a/src/unixsocket.c b/src/unixsocket.c
+index b813f52..1874399 100644
+--- a/src/unixsocket.c
++++ b/src/unixsocket.c
+@@ -263,5 +263,5 @@ static gboolean handle_request(GIOChannel* gio, GIOCondition condition, ClientIn
+ }
+ 
+ gboolean lxterminal_socket_initialize(LXTermWindow* lxtermwin, gint argc, gchar** argv) {
+-    init(lxtermwin, argc, argv);
++    return init(lxtermwin, argc, argv);
+ }
