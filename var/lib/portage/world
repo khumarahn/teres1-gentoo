@@ -2,9 +2,7 @@ app-admin/logrotate
 app-admin/sudo
 app-admin/syslog-ng
 app-admin/sysstat
-app-arch/cpio
 app-arch/file-roller
-app-arch/rpm
 app-editors/gummi
 app-editors/gvim
 app-editors/nano
@@ -55,7 +53,6 @@ sys-apps/usbutils
 sys-block/f3
 sys-devel/bc
 sys-devel/distcc
-sys-devel/gdb
 sys-fs/dosfstools
 sys-fs/ncdu
 sys-kernel/teres-headers
@@ -63,7 +60,6 @@ sys-power/acpid
 sys-process/cronie
 sys-process/htop
 www-client/chromium
-x11-apps/mesa-progs
 x11-base/xorg-x11
 x11-drivers/xf86-video-fbturbo
 x11-libs/libvdpau-sunxi

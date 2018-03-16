@@ -1,1 +1,2 @@
 =dev-libs/libxml2-2.9.7* # gentoo bug #644854
+=app-text/mupdf-1.12*    # gentoo bug #645948
