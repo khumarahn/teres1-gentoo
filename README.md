@@ -6,7 +6,7 @@ Building a usable linux on Teres 1 needs some patching and custom scripts. This 
 
 ![This must stop!](https://raw.githubusercontent.com/khumarahn/teres1-gentoo/master/screen.1.png)
 
-C and C++ programs are compiled for Cortex-a53 by gcc 7 with
+C and C++ programs are compiled for Cortex-a53 by gcc 7 and clang 5 with
 ```
 CFLAGS="-O2 -pipe -march=armv8-a+crypto+crc -mtune=cortex-a53"
 CXXFLAGS="${CFLAGS}"
@@ -22,16 +22,18 @@ For now, if you ever installed Gentoo, you probably know where to start. Right, 
 The kernel is special, and you may need to replace linux-headers with Teres' headers from the beginning. See my [package.provided](https://github.com/khumarahn/teres1-gentoo/blob/master/etc/portage/profile/package.provided) and [teres-headers](https://github.com/khumarahn/teres1-gentoo/tree/master/usr/local/portage/sys-kernel/teres-headers).
 
 ## Download
-
 Here is the image that I built for myself for everyday use:
 * November 28, 2017: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171128.img.xz.torrent
 * February 15, 2018: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180215.img.xz.torrent (Updates: 17.0 profile, gcc 7.3, headphones detection fixes, newer versions of many packages.)
+* March 16, 2018: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180316.img.xz.torrent (Updates: set up for a binary repo, a few updates and fixes) 
 ```
 # sha256sum teres-gentoo*.img*
 f5934c93aa2755c8275123864829fea64c8f5595d9c456a94b2fb79969fc2686  teres-gentoo-20171128.img
 55ec4b024f6484f09caf40af3a16a1a8ddf325e7108736569959c5205e3cb6a5  teres-gentoo-20171128.img.xz
 43e01f7cf7f5c2197ad1b5d9c5516a66465a7214945c712cbd77c89a5c7645f7  teres-gentoo-20180215.img
 c74ae08bae8cb5f61cc4595509e2456504d23eaa5c0ea1be815fa1f329115ca6  teres-gentoo-20180215.img.xz
+1543576506e1b3775d7ec5323ce0359e2d66dd2bfa731af65c33b48a27d86ec9  teres-gentoo-20180316.img
+d5328730b3ce62bc3305e99bbcba8499fae857eb0f970132c16aecf531cc73d6  teres-gentoo-20180316.img.xz
 ```
 
 Unpack the image and burn it to a microsd card:
@@ -41,6 +43,23 @@ dd if=teres-gentoo-20180215.img of=/dev/sdX status=progress
 Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
 
 To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcblk0p2` with what is in the respective partitions in the image. Then edit `/etc/fstab` and `/boot/uEnv.txt`.
+
+
+## Binary repo
+Compilation on Teres 1 is slow, sometimes even distcc does not help. I set up a binary repo on my vps. It holds a snapshot of portage and some prebuilt packages. The settings are in `/etc/portage/repos.conf/gentoo.conf`:
+```
+sync-uri = rsync://163.172.132.71/teres-portage
+```
+and in `/etc/portage/make.conf`:
+```
+PORTAGE_BINHOST="rsync://163.172.132.71/teres-portage-full/packages"
+```
+Change/remove the two likes above to use the official Gentoo repos.
+
+To install a binary program, make sure that your use flags, keywords and masks correspond to those I use, and run for example
+```
+emerge -av --getbinpkg kicad
+```
 
 ## Notes:
 * For the sleep button to work (Fn+F1), update the keyboard firmware, see https://github.com/d3v1c3nv11/TERES-KBD-RELEASE/tree/master/upgrade
