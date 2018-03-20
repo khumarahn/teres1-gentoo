@@ -11,6 +11,8 @@ media-sound/pavucontrol       -~arm64 -~arm amd64
 # bug #646382
 =dev-libs/nss-3.35 -~arm64 -~arm
 
+=sys-devel/gcc-7.3* **
+
 # distcc
 sys-devel/distcc amd64 ~amd64
 dev-util/shadowman amd64 ~amd64
@@ -50,3 +52,6 @@ dev-perl/XML-Writer amd64 ~amd64
 # kicad
 sci-electronics/electronics-menu amd64 ~amd64
 sci-electronics/kicad amd64 ~amd64
+
+# firefox
+www-client/firefox amd64 ~amd64

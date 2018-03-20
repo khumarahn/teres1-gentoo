@@ -50,3 +50,6 @@ dev-python/wxpython opengl
 # firefox
 media-libs/libpng apng
 dev-lang/python sqlite
+
+# vlc
+media-libs/freetype harfbuzz

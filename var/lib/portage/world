@@ -12,6 +12,7 @@ app-misc/teres1-ledctrl
 app-misc/tmux
 app-office/libreoffice
 app-portage/cpuid2cpuflags
+app-portage/gemato
 app-portage/gentoolkit
 app-portage/repoman
 app-text/evince
