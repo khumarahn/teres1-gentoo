@@ -55,3 +55,7 @@ sci-electronics/kicad amd64 ~amd64
 
 # firefox
 www-client/firefox amd64 ~amd64
+
+# dstat
+sys-apps/dstat amd64 ~amd64
+net-wireless/python-wifi amd64 ~amd64
