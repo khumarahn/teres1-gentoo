@@ -1,10 +1,2 @@
 =dev-libs/libxml2-2.9.7* # gentoo bug #644854
 =app-text/mupdf-1.12*    # gentoo bug #645948
-
-# llvm-6.0.0, gentoo bug #650506
-=sys-devel/clang-runtime-6.0.0
-=sys-libs/compiler-rt-6.0.0
-=sys-libs/compiler-rt-sanitizers-6.0.0
-=sys-devel/clang-6.0.0
-=sys-devel/llvm-6.0.0
-=sys-devel/llvm-common-6.0.0
