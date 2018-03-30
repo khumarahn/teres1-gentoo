@@ -3,6 +3,7 @@ app-admin/sudo
 app-admin/syslog-ng
 app-admin/sysstat
 app-arch/file-roller
+app-crypt/gentoo-keys
 app-editors/gummi
 app-editors/gvim
 app-editors/nano
@@ -46,7 +47,7 @@ net-misc/youtube-dl
 net-p2p/transmission
 net-wireless/iw
 sci-calculators/speedcrunch
-sci-electronics/kicad
+sys-apps/dstat
 sys-apps/gnome-disk-utility
 sys-apps/haveged
 sys-apps/pv
