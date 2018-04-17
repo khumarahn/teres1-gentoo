@@ -53,3 +53,6 @@ dev-lang/python sqlite
 
 # vlc
 media-libs/freetype harfbuzz
+
+# 648586
+sys-apps/portage -rsync-verify

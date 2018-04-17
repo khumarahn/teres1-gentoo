@@ -1,7 +1,5 @@
-# generally accept unstable, and also for 32 bit arm, because
-# many packages are missing the arm64 keyword
+# generally accept unstable
 */* ~arm64
-*/* ~arm
 
 # only stable (also if for amd64):
 media-gfx/gimp                -~arm64 -~arm amd64
@@ -13,21 +11,10 @@ media-sound/pavucontrol       -~arm64 -~arm amd64
 
 =sys-devel/gcc-7.3* **
 
-# distcc
-sys-devel/distcc amd64 ~amd64
-dev-util/shadowman amd64 ~amd64
-
 =app-misc/teres1-ledctrl-9999 **
 =app-misc/teres1-audioselect-9999 **
 
-app-editors/gvim amd64
-x11-apps/xinit amd64
-x11-misc/xdotool amd64
-x11-misc/redshift amd64
-sys-power/acpid amd64
-x11-libs/vte amd64
-
-<app-editors/gummi-9999 **
+app-editors/gummi *
 
 # video acceleration
 =x11-drivers/xf86-video-fbturbo-9999 **
@@ -35,27 +22,5 @@ x11-libs/vte amd64
 =x11-libs/libvdpau-sunxi-9999 **
 #=x11-libs/sunxi-libump-9999 **
 
-# nextcloud-client
-net-misc/nextcloud-client ~amd64
-dev-libs/qtkeychain amd64
-sys-fs/inotify-tools amd64
-
-sys-block/f3 amd64
-
-sci-calculators/speedcrunch amd64 ~amd64
-
-<sys-apps/haveged-9999 **
-
-# for biblatex
-dev-perl/XML-Writer amd64 ~amd64
-
-# kicad
-sci-electronics/electronics-menu amd64 ~amd64
-sci-electronics/kicad amd64 ~amd64
-
-# firefox
-www-client/firefox amd64 ~amd64
-
-# dstat
-sys-apps/dstat amd64 ~amd64
-net-wireless/python-wifi amd64 ~amd64
+# for subversion
+dev-libs/libutf8proc arm ~arm
