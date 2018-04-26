@@ -26,6 +26,7 @@ Here is the image that I built for myself for everyday use:
 * November 28, 2017: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20171128.img.xz.torrent
 * February 15, 2018: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180215.img.xz.torrent (Updates: 17.0 profile, gcc 7.3, headphones detection fixes, newer versions of many packages.)
 * March 16, 2018: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180316.img.xz.torrent (Updates: set up for a binary repo, a few updates and fixes) 
+* April 26, 2018: https://github.com/khumarahn/teres1-gentoo/raw/master/teres-gentoo-20180426.img.xz.torrent (Updates: f2fs for the win; some updates and simplifications) 
 ```
 # sha256sum teres-gentoo*.img*
 f5934c93aa2755c8275123864829fea64c8f5595d9c456a94b2fb79969fc2686  teres-gentoo-20171128.img
@@ -34,16 +35,17 @@ f5934c93aa2755c8275123864829fea64c8f5595d9c456a94b2fb79969fc2686  teres-gentoo-2
 c74ae08bae8cb5f61cc4595509e2456504d23eaa5c0ea1be815fa1f329115ca6  teres-gentoo-20180215.img.xz
 1543576506e1b3775d7ec5323ce0359e2d66dd2bfa731af65c33b48a27d86ec9  teres-gentoo-20180316.img
 d5328730b3ce62bc3305e99bbcba8499fae857eb0f970132c16aecf531cc73d6  teres-gentoo-20180316.img.xz
+330e2230420d12e4e6997a56f9538009135a891ab4e4a1bc9da8f3f02df9ccd3  teres-gentoo-20180426.img
+a9073851a32fa718ebb3599fca2c3d96d40148bafeb328cbe91a390c083535e6  teres-gentoo-20180426.img.xz
 ```
 
 Unpack the image and burn it to a microsd card:
 ```
-dd if=teres-gentoo-20180215.img of=/dev/sdX status=progress
+dd if=teres-gentoo-20180426.img of=/dev/sdX status=progress
 ```
 Plug the card in and boot. Default user is `tux`, password is `olimex`. Root password is `olimex` too.
 
 To install to MMC, replace the contents of your `/dev/mmcblk0p1` and `/dev/mmcblk0p2` with what is in the respective partitions in the image. Then edit `/etc/fstab` and `/boot/uEnv.txt`.
-
 
 ## Binary repo
 Compilation on Teres 1 is slow, sometimes even distcc does not help. I set up a binary repo on my vps. It holds a snapshot of portage and some prebuilt packages. The settings are in `/etc/portage/repos.conf/gentoo.conf`:
@@ -67,6 +69,6 @@ emerge -av --getbinpkg kicad
 * Screenshots are handled by the script `/usr/local/bin/screenshot.sh`. It silently saves png to `~/screenshots/`. PrtScr saves the whole screen, and Ctrl+PrtScr or Shift+PrtScr let you select a window.
 * No systemd, because it complains about the old kernel. Using openrc instead.
 * Battery indication is tricky, I had to patch lxpanel specifically for Teres. Currently it shows the charge (percentage) accurately, but does not estimate the remaining time.
-* Linux kernel is stock, except I changed the governor to `ondemand` and disabled `CONFIG_SECCOMP` (for chromium and pulseaudio).
+* Linux kernel is stock, except I changed the governor to `ondemand`, disabled `CONFIG_SECCOMP` (for chromium and pulseaudio) and compiled in f2fs.
 * Hdmi is not tested, I do not have the cable or the monitor.
 * Bluetooth is not tested.
