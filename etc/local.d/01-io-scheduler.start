@@ -1,0 +1,7 @@
+#!/bin/bash
+for DISK in /sys/block/mmcblk{0,1}; do
+    echo deadline > ${DISK}/queue/scheduler
+    echo 100 > ${DISK}/queue/iosched/read_expire
+    echo 20000 > ${DISK}/queue/iosched/write_expire
+    echo 16 > ${DISK}/queue/iosched/writes_starved
+done 
