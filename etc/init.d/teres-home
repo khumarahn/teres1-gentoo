@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+# Copyright 1999-2018 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+extra_commands="actual_mount"
+
+depend() {
+    need localmount
+    before xdm
+    after agetty bootmisc consolefont modules keymaps
+}
+
+
+run_on_tty1() {
+    setsid sh -c "exec $1 <>/dev/tty1 >&0 2>&1"
+}
+
+actual_mount() {
+    while true; do
+        echo
+        ebegin "Mounting ${DEST}"
+            /usr/bin/encfs --public "${DENC}" "${DEST}" -o nonempty && break
+        eend $? "Could not mount ${DEST}"
+        read -p "Try again (Y/n)? " tryagain
+        [[ $tryagain =~ ^[Nn]$ ]] && break
+    done
+}
+
+start() {
+    run_on_tty1 "/etc/init.d/teres-home actual_mount"
+}
+
+stop() {
+    ebegin "Unmounting ${DEST}"
+        fusermount -u "${DEST}"
+    eend $? "Could not unmount ${DEST}"
+
+}

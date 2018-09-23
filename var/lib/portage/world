@@ -3,6 +3,7 @@ app-admin/sudo
 app-admin/syslog-ng
 app-admin/sysstat
 app-arch/file-roller
+app-benchmarks/bonnie++
 app-crypt/gentoo-keys
 app-editors/gummi
 app-editors/gvim
@@ -16,8 +17,10 @@ app-portage/cpuid2cpuflags
 app-portage/gemato
 app-portage/gentoolkit
 app-portage/repoman
+app-shells/bash-completion
 app-text/evince
 app-text/texlive
+app-text/xournal
 dev-libs/libusb-compat
 dev-tex/biblatex
 dev-util/dialog
@@ -46,6 +49,7 @@ net-misc/openntpd
 net-misc/tigervnc
 net-misc/youtube-dl
 net-p2p/transmission
+net-proxy/sshuttle
 net-wireless/iw
 sci-calculators/speedcrunch
 sys-apps/dstat
@@ -56,7 +60,9 @@ sys-apps/usbutils
 sys-block/f3
 sys-devel/bc
 sys-devel/distcc
+sys-fs/cryptsetup
 sys-fs/dosfstools
+sys-fs/encfs
 sys-fs/f2fs-tools
 sys-fs/ncdu
 sys-kernel/teres-headers
@@ -71,3 +77,4 @@ x11-misc/lightdm
 x11-misc/redshift
 x11-misc/xdotool
 x11-misc/xscreensaver
+xfce-extra/xfce4-notifyd

@@ -1,0 +1,8 @@
+# old kernel
+>net-firewall/iptables-1.6
+>=net-misc/networkmanager-1.12.0
+
+#654770
+=media-libs/freetype-2.9.1-r4
+
+

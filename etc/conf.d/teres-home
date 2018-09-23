@@ -1,0 +1,4 @@
+# encfs encrypted folder
+DENC=/sdcard/.home
+# mount point
+DEST=/home

@@ -1,20 +1,18 @@
 # generally accept unstable
 */* ~arm64
+#*/* ~arm
 
 # only stable (also if for amd64):
 media-gfx/gimp                -~arm64 -~arm amd64
 media-sound/pulseaudio        -~arm64 -~arm amd64
 media-sound/pavucontrol       -~arm64 -~arm amd64
 
-# bug #646382
-=dev-libs/nss-3.35 -~arm64 -~arm
-
 =sys-devel/gcc-7.3* **
 
 =app-misc/teres1-ledctrl-9999 **
 =app-misc/teres1-audioselect-9999 **
 
-app-editors/gummi *
+app-editors/gummi * ~*
 
 # video acceleration
 =x11-drivers/xf86-video-fbturbo-9999 **
@@ -24,3 +22,19 @@ app-editors/gummi *
 
 # for subversion
 dev-libs/libutf8proc arm ~arm
+
+net-proxy/sshuttle * ~*
+
+app-text/xournal * ~*
+
+app-misc/evtest * ~*
+
+dev-perl/YAML-Tiny * ~*
+
+www-client/chromium amd64
+dev-util/gn amd64
+
+
+sys-fs/encfs * ~*
+
+app-benchmarks/bonnie++ * ~*
