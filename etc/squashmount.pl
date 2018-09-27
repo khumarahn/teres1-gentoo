@@ -7,12 +7,12 @@ $obsolete_overlayfs = 1;
 $rm_changes = $rm_workdir = $rm_readonly = 0;
 
 my $defaults = {
-	COMPRESSION => 'xz',
-        COMPOPT_XZ => ['-Xbcj', 'arm'],
+    COMPRESSION => 'xz',
+    COMPOPT_XZ => ['-Xbcj', 'arm'],
 };
 
 @mounts = (
-	standard_mount('portage', '/usr/portage', $defaults),
+    standard_mount('portage', '/usr/portage', $defaults),
 );
 
 1;  # The last executed command in this file should be a true expression
