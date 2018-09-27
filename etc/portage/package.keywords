@@ -34,7 +34,10 @@ dev-perl/YAML-Tiny * ~*
 www-client/chromium amd64
 dev-util/gn amd64
 
-
 sys-fs/encfs * ~*
 
 app-benchmarks/bonnie++ * ~*
+
+# squashmount
+dev-perl/String-ShellQuote * ~*
+sys-fs/unionfs-fuse * ~*
